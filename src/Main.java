@@ -13,11 +13,10 @@ public class Main {
         Person person8 = new Person("Vika", 21);
         List<Person> list = List.of(person0, person1, person2, person3, person4,person5,person6,person7,person8);
         System.out.println(list);
-        Collection<Object> newList = checkItOut(list);
+        Collection newList = checkItOut(list);
         System.out.println(newList);
     }
-    public static Collection<Object> checkItOut(Collection coll) {
-        Collection<Object> set = new HashSet<>(coll);
-        return set;
+    public static <T> Collection<T> checkItOut(Collection<T> coll) {
+        return new HashSet<>(coll);
     }
 }
